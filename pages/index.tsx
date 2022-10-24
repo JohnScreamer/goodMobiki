@@ -7,8 +7,9 @@ import Card from "../components/UI/Card/Card";
 import GoodRussians from "../components/UI/GoodRussians/GoodRussians";
 import NavBar from "../components/UI/NavBar/NavBar";
 import { ILatestResponse, SVGResponse } from "../Types/apiResponse";
+import { GetServerSideProps } from "next";
 
-export const getStaticProps = async () => {
+export const getServerSideProps:GetServerSideProps = async () => {
     const responseStats = await fetch(
         "https://russianwarship.rip/api/v1/statistics/latest"
     );
